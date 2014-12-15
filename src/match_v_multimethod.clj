@@ -2,6 +2,9 @@
   (:require [clojure.core.match :refer [match]]
             [clojure.test.check.generators :as gen]))
 
+#_
+(def kws [:a :b :c :d])
+
 (def kws
   ;; test dispatch against 26 keywords (:a - :z)
   (map (comp keyword str char)
