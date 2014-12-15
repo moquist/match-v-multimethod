@@ -85,6 +85,40 @@ match-v-multimethod=> (fight! 1000000)
 nil
 ```
 
+Then I tested dispatching against only 4 variants: ```:a``` -
+```:z```. core.match started to come out ahead at the lower end of
+the scale:
+```clojure
+match-v-multimethod=> (fight! 1000)
+:n 1000
+:multimethod
+"Elapsed time: 1.278353 msecs"
+:core.match
+"Elapsed time: 1.037219 msecs"
+nil
+match-v-multimethod=> (fight! 10000)
+:n 10000
+:multimethod
+"Elapsed time: 15.397662 msecs"
+:core.match
+"Elapsed time: 14.650736 msecs"
+nil
+match-v-multimethod=> (fight! 100000)
+:n 100000
+:multimethod
+"Elapsed time: 27.441792 msecs"
+:core.match
+"Elapsed time: 36.913234 msecs"
+nil
+match-v-multimethod=> (fight! 1000000)
+:n 1000000
+:multimethod
+"Elapsed time: 259.181634 msecs"
+:core.match
+"Elapsed time: 400.796067 msecs"
+nil
+```
+
 ## License
 
 Copyright © 2014 Matt Oquist <moquist@majen.net>
